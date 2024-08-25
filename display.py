@@ -412,8 +412,9 @@ elif section == "Advanced Data Analysis and Model Insights":
     )
 
     def plot_correlation_heatmap(X):
-        st.dataframe(X)
-        corr_matrix = pd.DataFrame(X).corr()
+        # Select the first 10 features
+        df = pd.DataFrame(X).iloc[:, :10]
+        corr_matrix = df.corr()
         fig, ax = plt.subplots(figsize=(10, 6))
         sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", ax=ax)
         ax.set_title("Feature Correlation Heatmap")
@@ -426,7 +427,7 @@ elif section == "Advanced Data Analysis and Model Insights":
         plt.xlabel("Time")
         plt.ylabel("EEG Signal")
         plt.grid(True, linestyle="--", alpha=0.7)
-        st.pyplot(fig)
+        st.pyplot()
 
     def plot_hyperparameter_heatmap(hyperparam_combinations, validation_scores):
         fig, ax = plt.subplots(figsize=(10, 6))
@@ -451,7 +452,7 @@ elif section == "Advanced Data Analysis and Model Insights":
         plt.xlabel("Hyperparameter Value")
         plt.ylabel("Validation Score")
         plt.grid(True, linestyle="--", alpha=0.7)
-        st.pyplot(fig)
+        st.pyplot()
 
     # Sample index for time-series analysis
     sample_index = st.slider(
