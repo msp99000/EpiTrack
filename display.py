@@ -532,7 +532,7 @@ elif section == "Statistical Hypothesis Testing":
         plt.xlabel("EEG Class")
         plt.ylabel("Values")
         plt.grid(True, linestyle="--", alpha=0.7)
-        st.pyplot(fig)
+        st.pyplot()
 
         # Display interpretation
         st.write(f"**F-Statistic:** {f_stat:.2f}")
