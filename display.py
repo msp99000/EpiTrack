@@ -196,7 +196,7 @@ elif section == "EDA":
         adf_result = adfuller(data)
         st.write("ADF Statistic:", adf_result[0])
         st.write("p-value:", adf_result[1])
-        st.write("Critical Values:", adf_result[4])
+        # st.write("Critical Values:", adf_result[4])
 
         kpss_result = kpss(data, regression="c")
         st.write("\nKPSS Statistic:", kpss_result[0])
@@ -210,7 +210,7 @@ elif section == "EDA":
         plt.title("Power Spectral Density")
         plt.xlabel("Frequency (Hz)")
         plt.ylabel("Power Spectral Density (V^2/Hz)")
-        st.pyplot(plt)
+        st.pyplot(fig)
 
     def extract_statistical_features(data):
         mean_val = np.mean(data)
@@ -412,6 +412,7 @@ elif section == "Advanced Data Analysis and Model Insights":
     )
 
     def plot_correlation_heatmap(X):
+        st.dataframe(X)
         corr_matrix = pd.DataFrame(X).corr()
         fig, ax = plt.subplots(figsize=(10, 6))
         sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", ax=ax)
@@ -425,7 +426,7 @@ elif section == "Advanced Data Analysis and Model Insights":
         plt.xlabel("Time")
         plt.ylabel("EEG Signal")
         plt.grid(True, linestyle="--", alpha=0.7)
-        st.pyplot(plt)
+        st.pyplot(fig)
 
     def plot_hyperparameter_heatmap(hyperparam_combinations, validation_scores):
         fig, ax = plt.subplots(figsize=(10, 6))
@@ -450,7 +451,7 @@ elif section == "Advanced Data Analysis and Model Insights":
         plt.xlabel("Hyperparameter Value")
         plt.ylabel("Validation Score")
         plt.grid(True, linestyle="--", alpha=0.7)
-        st.pyplot(plt)
+        st.pyplot(fig)
 
     # Sample index for time-series analysis
     sample_index = st.slider(
@@ -530,7 +531,7 @@ elif section == "Statistical Hypothesis Testing":
         plt.xlabel("EEG Class")
         plt.ylabel("Values")
         plt.grid(True, linestyle="--", alpha=0.7)
-        st.pyplot(plt)
+        st.pyplot(fig)
 
         # Display interpretation
         st.write(f"**F-Statistic:** {f_stat:.2f}")
