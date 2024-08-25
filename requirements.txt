@@ -1,0 +1,12 @@
+gdown
+streamlit
+pandas
+numpy
+scipy
+shap
+matplotlib
+seaborn
+statsmodels
+lifelines
+scikit-learn
+requests
