@@ -13,3 +13,6 @@ EpiTrack is an advanced machine learning project designed to predict seizure sta
 4. **Visualization**: Integrated with Streamlit for an interactive, cloud-deployed interface, also handled in `display.py`.
 
 This project demonstrates the power of ensemble learning in medical signal processing, offering a comprehensive approach to seizure state prediction from EEG data.
+
+## Application
+Check the deployed application at https://epitrack.streamlit.app
